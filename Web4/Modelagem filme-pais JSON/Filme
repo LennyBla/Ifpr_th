@@ -1,0 +1,34 @@
+{
+    "id": 0,
+    "title": "Homem-Aranha: Através do Aranhaverso ",
+    "ano_producao": 2023,
+    "direcao": ["Joaquim Dos Santos", "Justin K. Thompson", "Kemp Powers"],
+    "estreia": "2023-06-01",
+    "duracao_hora": "02:20:00", 
+    "classificacao": 10,
+    "genero": ["Animação", "Ação", "Aventura", "Ficção científica"],
+    "paises_origem": ["Canadá", "Estados Unidos da América"],
+    "sinopse": "Miles Morales regressa para o próximo capítulo da saga Universo-Aranha, vencedora deum Óscar. Uma aventura épica que transportará o amigo da vizinhançade Brooklyn, Homem-Aranha, através do Multiverso para unir forças com Gwen Stacy euma nova equipa de Pessoas-Aranha. Miles, Gwen e esta equipa irão enfrentar um vilão muito mais poderoso do que qualquer outro antes encontrado.",
+    "roteiro": ["Christopher Miller", "Dave Callaham","Phil Lord"],
+    "elenco": 
+        [
+            {
+                "Shameik Moore": "Miles Morales / Spider-Man (voice)"
+            },
+            {
+                "Hailee Steinfeld": "Gwen Stacy / Spider-Woman (voice)"
+            },
+            {
+                "Brian Tyree Henry": "Jeff Morales (voice)"
+            },
+            {
+                "Luna Lauren Velez": "Rio Morales (voice)"
+            },
+            {
+                "Lauren Stewart (IX)": "Pianist"
+            },
+            {
+                "Jake Johnson": "Peter B. Parker / Spider-Man (voice)"
+            }
+        ]
+}
