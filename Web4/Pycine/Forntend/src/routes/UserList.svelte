@@ -74,8 +74,8 @@
                                     "Content-Type": "application/json",
                                 },
                                 body: JSON.stringify({
-                                    name: "mayara  ",
-                                    email: "mayazinha",
+                                    name: "Thais Florentin ",
+                                    email: "thais.florentin@gmail.com",
                                     password: "teste",
                                 }),
                             })
