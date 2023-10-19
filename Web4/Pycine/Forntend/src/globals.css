@@ -1,0 +1,42 @@
+/* Importação da fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;800&display=swap');
+
+/* Estilos para o corpo do documento */
+body {
+    background-image: url(./foto.jpeg);
+    background-repeat:repeat;
+    background-position: center center;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+
+}
+
+button {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: #aaa;
+}
+form input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.boxBorder{
+    gap: 0.5rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 1);
+}
+.flexCenter {
+    display: flex;
+    align-items: center;
+}
