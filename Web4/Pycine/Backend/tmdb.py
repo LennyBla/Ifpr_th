@@ -72,7 +72,7 @@ def get_artista_name(name):
 def get_tmdb_genres(lang="us"):
     """ Obter a lista de generos """
     data = get_json(
-        "/genre/movie/list", f"?language={lang}"
+        "/genre/movie/list" f"?language={lang}"
     )
     results = data['genres']
     return results
