@@ -20,7 +20,6 @@ def get_genero_id(id):
             names.append(genre)
     return names
 
-# ====================================
 
 def get_json(endpoint, params=None):
     """ 
@@ -30,7 +29,6 @@ def get_json(endpoint, params=None):
     response = requests.get(url)
     return response.json()
 
-# ====================================
 
 def filmes_populares(limit=3):
     """ Obtem os filmes mais populares usando endpoint discover """
@@ -55,7 +53,6 @@ def filmes_populares(limit=3):
     print(f"Total: {len(results)}")
     return results
 
-# ====================================
 
 # https://api.themoviedb.org/3/person/id
 def get_artista_id(id):
@@ -67,8 +64,6 @@ def get_artista_name(name):
     """ procura artista pelo nome """
     pass
 
-# ====================================
-
 def get_tmdb_genres(lang="us"):
     """ Obter a lista de generos """
     data = get_json(
@@ -76,8 +71,6 @@ def get_tmdb_genres(lang="us"):
     )
     results = data['genres']
     return results
-
-# ====================================
 
 if __name__ == "__main__":
     filmes_populares()
