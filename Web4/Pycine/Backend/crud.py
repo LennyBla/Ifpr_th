@@ -34,4 +34,13 @@ def delete_user(db: Session, user_id: int):
     db.commit()
     return user_id
 
-
+def delete_favorite(db: Session, user_id: int, favorite_id: int):
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    favorite = db.query(models.Favorite).filter(models.Favorite.id == favorite_id).first()
+    
+    if favorite in user.favorites:
+        user.favorites.remove(favorite)
+        db.delete(favorite)
+        db.commit()
+    
+    return favorite_id
