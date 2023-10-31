@@ -1,9 +1,9 @@
 <script>
-    import '../globals.css'
+    import '../globals.css';
     let promise = "";
     let nameArtist = "";
+
     async function getArtista(name) {
-        // faz um request GET para endpoint /filmes
         const res = await fetch(`http://localhost:8000/artistas/${name}`);
         const text = await res.json();
         if (res.ok) {
@@ -12,16 +12,18 @@
             throw new Error(text);
         }
     }
+
     function handleClick() {
-        return (promise = getArtista(nameArtist));
+        promise = getArtista(nameArtist);
     }
 </script>
+
 
 <div class="content flexCenter">
     <h1>Lista de Artistas</h1>
     <form action="">
         <input bind:value={nameArtist} type="text" />
-        <button on:click={handleClick}> Get Artistas </button>
+        <button on:click={handleClick}><i class="bi bi-search"></button>
     </form>
 
     {#await promise}
@@ -31,10 +33,7 @@
         <div class="artist boxBorder flexCenter">
             <p>{artista.id}</p>
             <p>{artista.name}</p>
-            <img
-                src="https://image.tmdb.org/t/p/w185/{artista.profile_path}"
-                alt=""
-            />
+            <img src="https://image.tmdb.org/t/p/w185/{artista.profile_path} "alt=""/>
             <p>{artista.biography}</p>
         </div>
         {/each}
@@ -42,6 +41,7 @@
         <p style="color: red">{error.message}</p>
     {/await}
 </div>
+
 <style>
 .content, .artist {
     display: flex;
