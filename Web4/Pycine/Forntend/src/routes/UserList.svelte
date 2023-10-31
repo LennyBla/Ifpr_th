@@ -27,24 +27,13 @@
         {#each users as user}
             <div class="information flexCenter boxBorder">
                 <div>
-                    <p>
-                        <span> ID: </span>
-                        {user.id}
-                    </p>
-
-                    <p>
-                        <span> Nome: </span>
-                        {user.name}
-                    </p>
-                    <p>
-                        <span>E-Ma  il: </span>
-                        {user.email}
-                    </p>
+                    <p><span> ID: </span>{user.id}</p>
+                    <p><span> Nome: </span>{user.name}</p>
+                    <p><span>E-Ma  il: </span>{user.email}</p>
                 </div>
 
                 <div>
-                    <button
-                        on:click={() => {
+                    <button on:click={() => {
                             {
                                 fetch(
                                     `http://localhost:8000/users/${user.id}`,
@@ -66,8 +55,8 @@
                         Delete
                     </button>
 
-                    <button
-                        on:click={() => {
+                    <button on:click={() => {
+
                             fetch(`http://localhost:8000/users/${user.id}`, {
                                 method: "PUT",
                                 headers: {
