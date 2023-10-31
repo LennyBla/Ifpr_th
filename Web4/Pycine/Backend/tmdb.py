@@ -5,7 +5,22 @@ genres = [
     {'id': 28, 'name': 'Action'}, 
     {'id': 12, 'name': 'Adventure'}, 
     {'id': 16, 'name': 'Animation'}, 
-    {'id': 35, 'name': 'Comedy'}, {'id': 80, 'name': 'Crime'}, {'id': 99, 'name': 'Documentary'}, {'id': 18, 'name': 'Drama'}, {'id': 10751, 'name': 'Family'}, {'id': 14, 'name': 'Fantasy'}, {'id': 36, 'name': 'History'}, {'id': 27, 'name': 'Horror'}, {'id': 10402, 'name': 'Music'}, {'id': 9648, 'name': 'Mystery'}, {'id': 10749, 'name': 'Romance'}, {'id': 878, 'name': 'Science Fiction'}, {'id': 10770, 'name': 'TV Movie'}, {'id': 53, 'name': 'Thriller'}, {'id': 10752, 'name': 'War'}, {'id': 37, 'name': 'Western'}]
+    {'id': 35, 'name': 'Comedy'}, 
+    {'id': 80, 'name': 'Crime'}, 
+    {'id': 99, 'name': 'Documentary'},
+    {'id': 18, 'name': 'Drama'},
+    {'id': 10751, 'name': 'Family'}, 
+    {'id': 14, 'name': 'Fantasy'}, 
+    {'id': 36, 'name': 'History'}, 
+    {'id': 27, 'name': 'Horror'},
+    {'id': 10402, 'name': 'Music'}, 
+    {'id': 9648, 'name': 'Mystery'}, 
+    {'id': 10749, 'name': 'Romance'},
+    {'id': 878, 'name': 'Science Fiction'},
+    {'id': 10770, 'name': 'TV Movie'},
+    {'id': 53, 'name': 'Thriller'},
+    {'id': 10752, 'name': 'War'}, 
+    {'id': 37, 'name': 'Western'}]
 
 def get_genero_id(id):
     """ retorna o nome do genero de acordo com o id """
@@ -20,6 +35,7 @@ def get_genero_id(id):
             names.append(genre)
     return names
 
+# ====================================
 
 def get_json(endpoint, params=None):
     """ 
@@ -29,6 +45,7 @@ def get_json(endpoint, params=None):
     response = requests.get(url)
     return response.json()
 
+# ====================================
 
 def filmes_populares(limit=3):
     """ Obtem os filmes mais populares usando endpoint discover """
@@ -53,6 +70,7 @@ def filmes_populares(limit=3):
     print(f"Total: {len(results)}")
     return results
 
+# ====================================
 
 # https://api.themoviedb.org/3/person/id
 def get_artista_id(id):
@@ -64,15 +82,26 @@ def get_artista_name(name):
     """ procura artista pelo nome """
     pass
 
+# ====================================
+
 def get_tmdb_genres(lang="us"):
     """ Obter a lista de generos """
     data = get_json(
-        "/genre/movie/list" f"?language={lang}"
+        "/genre/movie/list", f"?language={lang}"
     )
     results = data['genres']
     return results
 
+# ====================================
+
 if __name__ == "__main__":
+    # print(get_genero_id(12))
     filmes_populares()
+    # filmes_populares(200)
+    # teste:
+    # print(get_tmdb_genres())
+    # print(get_tmdb_genres("pt-br"))
+    # print(get_genero_id(28)) # Action
+    # print(get_genero_id([28,12])) # Action
     
 # uvicorn pycine:app --reload
