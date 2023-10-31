@@ -18,8 +18,13 @@
     <li class="item-menu">
       <a href="#">
         <span class="icon"><i class="bi bi-tv"></i></span>
-        <li><a class="txt-link" href="/" on:click|preventDefault={() => (menu = 2)}>Movie</a></li>
-    
+        <li><a class="txt-link" href="/" on:click|preventDefault={() => (menu = 2)}>Filmes</a></li>
+      </a>
+    </li>
+    <li class="item-menu">
+      <a href="#">
+        <span class="icon"> <i class="bi bi-heart"></i></span>
+        <li><a class="txt-link" href="/" on:click|preventDefault={() => (menu=3)}>Favoritos</a></li>
       </a>
     </li>
     <li class="item-menu">
@@ -45,11 +50,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Noto Sans', sans-serif;
-  }
-
-  body {
-    height: 100vh;
-    background-color: #202020;
   }
 
   nav.menu-lateral {
@@ -101,7 +101,7 @@
     font-size: 20px;
     padding: 20px 4%;
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     line-height: 0%;
   }
 
@@ -111,7 +111,7 @@
     }
 
   ul li.item-menu a .icon > i {
-    font-size: 30px;
+    font-size: 35px;
     margin-left: 10px;
   }
 </style>
