@@ -21,9 +21,7 @@ def create_user(db: Session, user: schemas.UserCreate):
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
-    return db_user
-
-  
+    return db_user  
 def update_user(db: Session, user_id: int, user: schemas.UserCreate):
     db_user = db.query(models.User).filter(models.User.id == user_id).first()
     db_user.name = user.name
@@ -32,17 +30,17 @@ def update_user(db: Session, user_id: int, user: schemas.UserCreate):
     db.refresh(db_user)
     return db_user
 def delete_user(db: Session, user_id: int):
-    user_to_delete = db.query(models.User).filter(models.User.id == user_id).first()
-    if user_to_delete:
-        db.delete(user_to_delete)
-        db.commit()
-        return user_to_delete
-    return None 
-
-#update
-def favoritar(db:Session, favorito: schemas.Favoritos):
-    db_favorito= models.Favorito_movie(tmdb_id=favorito.tmdb_id)
-    db.add(db_favorito)
+    db.query(models.User).filter(models.User.id == user_id).delete()
     db.commit()
-    db.refresh(db_favorito)
-    return db_favorito
+    return user_id
+def favorite_movie(db: Session, tmdb_id: int):
+    db_movie = db.query(models.Movie).filter(models.Movie.tmdb_id).first()
+    if db_movie is None:
+        db_movie = models.Movie(tmdb_id=tmdb_id)
+        db.add(db_movie)
+        db.commit()
+        db.refresh(db_movie)
+    return db_movie
+
+def get_favorites(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(models.Movie).offset(skip).limit(limit).all()
