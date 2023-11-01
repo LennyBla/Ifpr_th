@@ -13,13 +13,15 @@ class User(Base):
     # Adicione a relação 'favoritos'
     favoritos = relationship("Favorito_movie", back_populates="user")
 
-class Movier(Base):
+class Movie(Base):
     __tablename__ = "movies"
+
     id = Column(Integer, primary_key=True, index=True)
-    tmdb_id= Column(String)
-    title_id= Column(String)
-    is_active = Column(Boolean, default=True)
+    tmdb_id = Column(Integer)
     
+    user_id = Column(Integer, ForeignKey("users.id"))
+    user = relationship("User", back_populates="movies")
+      
 class Favorito_movie(Base):
     __tablename__ = 'favorito_movie'
     user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
@@ -28,6 +30,5 @@ class Favorito_movie(Base):
     # Adicione as relações 'user' e 'movie'
     user = relationship("User", back_populates="favoritos")
     movie = relationship("Movier", back_populates="favoritos")
-
 
 #CLASSE Q É MAPEADA TABELA DO SQLITE
