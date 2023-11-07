@@ -18,7 +18,7 @@
 </script>
 
 <div class="content flexCenter">
-    <button on:click={handleClick}> Get filmes </button>
+    <button on:click={handleClick}> Lista usuarios </button>
 
     {#await promise}
         <p>...waiting</p>
@@ -29,7 +29,7 @@
                 <div>
                     <p><span> ID: </span>{user.id}</p>
                     <p><span> Nome: </span>{user.name}</p>
-                    <p><span>E-Ma  il: </span>{user.email}</p>
+                    <p><span>E-mail: </span>{user.email}</p>
                 </div>
 
                 <div>
